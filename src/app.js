@@ -3,12 +3,15 @@ import {routerSolicitud} from "./rutas/solicitudesRouter.js";
 import { routerMascotas } from "./rutas/mascotasRouter.js";
 import { routerAdoptante } from "./rutas/adoptantesRouter.js";
 import {db} from "./database/conexion.js";
+import cors from "cors";
 
 const app = express();
 
 //Middleware JSON
 app.use(express.json());
 
+//cors
+app.use(cors());
 
 //Verificar Conexion Base Datos
 db.authenticate().then(()=>{
